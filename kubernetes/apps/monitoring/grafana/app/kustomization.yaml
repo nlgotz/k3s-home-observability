@@ -4,3 +4,7 @@ kind: Kustomization
 resources:
   # - grafana-secrets.yaml
   - helmrelease.yaml
+labels:
+  - pairs:
+      app.kubernetes.io/name: grafana
+      app.kubernetes.io/instance: grafana
