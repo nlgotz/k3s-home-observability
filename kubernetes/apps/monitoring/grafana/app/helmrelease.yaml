@@ -27,6 +27,8 @@ spec:
   uninstall:
     keepHistory: false
   values:
+    adminUser: admin
+    adminPassword: admin
     rbac:
       pspEnabled: false
     # admin:
@@ -50,7 +52,7 @@ spec:
     grafana.ini:
       auth.basic:
         enabled: true
-        # disable_login_form: false
+        disable_login_form: true
       auth.anonymous:
         enabled: true
         org_name: HomeOps
@@ -94,44 +96,6 @@ spec:
     #           implementation: prometheus
     dashboards:
       default:
-    #     # Ref: https://grafana.com/grafana/dashboards/7845-zfs/
-    #     zfs:
-    #       gnetId: 7845
-    #       revision: 4
-    #       datasource: Prometheus
-    #     # Ref: https://grafana.com/grafana/dashboards/13502-minio-dashboard/
-    #     minio:
-    #       gnetId: 13502
-    #       revision: 10
-    #       datasource: Prometheus
-    #     # Ref: https://grafana.com/grafana/dashboards/1860-node-exporter-full/
-    #     node-exporter-full:
-    #       gnetId: 1860
-    #       revision: 29
-    #       datasource: Prometheus
-    #     # Ref: https://grafana.com/grafana/dashboards/763-redis-dashboard-for-prometheus-redis-exporter-1-x/
-    #     redis:
-    #       gnetId: 763
-    #       revision: 4
-    #       datasource: Prometheus
-    #     # Ref: https://grafana.com/grafana/dashboards/5342-ceph-pools/
-    #     ceph-pools:
-    #       gnetId: 5342
-    #       revision: 9
-    #       datasource: Prometheus
-    #     # Ref: https://grafana.com/grafana/dashboards/5336-ceph-osd-single/
-    #     ceph-osd:
-    #       gnetId: 5336
-    #       revision: 9
-    #       datasource: Prometheus
-    #     # Ref: https://grafana.com/grafana/dashboards/2842-ceph-cluster/
-    #     ceph-cluster:
-    #       gnetId: 2842
-    #       revision: 16
-    #       datasource: Prometheus
-    #     cert-manager:
-    #       url: https://raw.githubusercontent.com/monitoring-mixins/website/master/assets/cert-manager/dashboards/cert-manager.json
-    #       datasource: Prometheus
         flux-cluster:
           url: https://raw.githubusercontent.com/fluxcd/flux2/main/manifests/monitoring/monitoring-config/dashboards/cluster.json
           datasource: Prometheus
