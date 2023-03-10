@@ -16,3 +16,4 @@ resources:
   - ./weave-gitops.yaml
   - ./grafana-charts.yaml
   - ./coredns.yaml
+  - ./prometheus-community.yaml
